@@ -25,11 +25,6 @@ const SearchBar: React.FC<SearchBarProps> = ({ categories, onSearch }) => {
     onSearch(searchText, e.target.value, sortByPrice);
   };
 
-  const handleSortChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setSortByPrice(e.target.value);
-    onSearch(searchText, selectedCategory, e.target.value);
-  };
-
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     onSearch(searchText, selectedCategory, sortByPrice);
@@ -85,17 +80,16 @@ const SearchBar: React.FC<SearchBarProps> = ({ categories, onSearch }) => {
           ))}
         </select>
       </div>
-      <div className="flex mb-4">
+      {/* <div className="flex mb-4">
         <select
           className="block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500"
           value={sortByPrice}
-          onChange={handleSortChange}
         >
           <option value="None">Sort by Price</option>
           <option value="asc">Price: Low to High</option>
           <option value="desc">Price: High to Low</option>
         </select>
-      </div>
+      </div> */}
     </form>
   );
 };

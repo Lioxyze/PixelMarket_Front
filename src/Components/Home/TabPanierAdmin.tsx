@@ -60,11 +60,14 @@ const TabPanierAdmin: React.FC<TabproductProps> = ({ product, onDelete }) => {
   return (
     <div className="relative flex flex-col max-w-sm w-full bg-white border border-gray-100 rounded-lg shadow-md overflow-hidden m-4">
       <a href="#" className="relative">
-        <img
-          className="w-full h-64 object-cover"
-          src={product.image}
-          alt={product.title}
-        />
+        <Link href={`/Home/${product.id}`}>
+          <img
+            className="w-full h-64 object-cover"
+            src={product.image}
+            alt={product.title}
+          />{" "}
+        </Link>
+
         <span className="absolute top-3 left-3 bg-black text-white text-xs font-medium px-2 py-1 rounded-full">
           39% OFF
         </span>

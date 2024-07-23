@@ -89,7 +89,7 @@ const NavBar = () => {
           </a>
           <a
             className="flex items-center hover:text-gray-200 relative"
-            href="#"
+            href="/ShoppingCart"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -107,7 +107,7 @@ const NavBar = () => {
             </svg>
             <span className="absolute -top-2 -right-2 flex items-center justify-center h-4 w-4 bg-pink-500 rounded-full text-xs text-white">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-pink-400 opacity-75"></span>
-              <span className="relative">3</span>
+              <span className="relative">0</span>
             </span>
           </a>
           <a className="flex items-center hover:text-gray-200" href="#">
@@ -128,10 +128,10 @@ const NavBar = () => {
             {username && <span className="ml-2">{username}</span>}
           </a>
           <img
-            src="https://cdn.icon-icons.com/icons2/3641/PNG/512/stop_white_button_icon_227857.png"
+            src="https://media.discordapp.net/attachments/1213050633322496040/1264885569796702248/istockphoto-1129712683-612x612-removebg-preview.png?ex=669f7ffc&is=669e2e7c&hm=5c489a5c4e5c06430661cd45731bb4b31e39702674b57cc61c9075f51a4026c5&=&format=webp&quality=lossless&width=473&height=473"
             alt="Disconnect"
             onClick={handleLogout}
-            className="h-8 w-8 cursor-pointer hover:opacity-75"
+            className="h-7 w-7 cursor-pointer hover:opacity-75"
           />
         </div>
 
@@ -162,18 +162,11 @@ const NavBar = () => {
         <div className="xl:hidden bg-gray-900 text-white w-full absolute top-full left-0 p-4">
           <ul className="space-y-4">
             <li>
+              <span className="ml-2">{username}</span>
+            </li>
+            <li>
               <a className="block hover:text-gray-200" href="/Home">
                 Home
-              </a>
-            </li>
-            <li>
-              <a className="block hover:text-gray-200" href="#">
-                Collections
-              </a>
-            </li>
-            <li>
-              <a className="block hover:text-gray-200" href="#">
-                Contact Us
               </a>
             </li>
             {roleId === 2 && (

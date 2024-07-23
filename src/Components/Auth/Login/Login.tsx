@@ -4,6 +4,7 @@ import toast, { Toaster } from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { login } from "@/Service/Auth";
+import { log } from "console";
 
 type LoginFormInputs = {
   email: string;
@@ -26,13 +27,19 @@ export const LoginForm = () => {
     setError("");
     try {
       const res = await login(data);
-      if (res.status === 200) {
+      console.log(res);
+
+      if (res.status === 201) {
         window.localStorage.setItem("jwt", res.data.access_token);
+        console.log("hello");
+
+        toast.success("Bienvenue Sur PixelMarket");
         toast.success("Connexion réussie");
-        push("/Home");
+
+        router.push("/Home");
       }
-    } catch (e) {
-      console.log("error", e);
+    } catch (e: any) {
+      console.log("error", e.stack);
       setError("Identifiants incorrects");
     }
   };
@@ -97,14 +104,6 @@ export const LoginForm = () => {
               >
                 {" "}
                 No account yet?
-              </a>
-            </div>
-            <div>
-              <a
-                href="/Home"
-                className="text-sm text-indigo-600 hover:underline"
-              >
-                Bug Login ?
               </a>
             </div>
           </div>

@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import CardContainer from "../Home/CardContainer";
 import TabUser from "../User/TabUser";
-import { AllProduct } from "@/Service/Product";
+import { AllProduct, getAllCategories, searchProduct } from "@/Service/Product";
 import { AllUser } from "@/Service/User";
 import { Product } from "@/Utils/types";
 import { User } from "@/Utils/User";
@@ -11,12 +11,36 @@ import TabCategory from "../Category/TabCategory";
 import { AllCate } from "@/Service/CategoryNew";
 import { Category } from "@/Utils/Category";
 import TabPanierAdmin from "../Home/TabPanierAdmin";
+import SearchBar from "../SearchBar/SearchBar";
 
 const AdminDashboard = () => {
   const [products, setProducts] = useState<Product[]>([]);
+  const [categories, setCategories] = useState<Category[]>([]);
   const [users, setUsers] = useState<User[]>([]);
   const [isReloadNeeded, setIsReloadNeeded] = useState(false);
   const [category, setCategory] = useState<Category[]>([]);
+  const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    AllProduct().then((res) => {
+      setProducts(res.product);
+      setFilteredProducts(res.product);
+    });
+
+    getAllCategories().then((res) => {
+      setCategories(res.categories);
+    });
+  }, [isReloadNeeded]);
+
+  const handleSearch = async (searchText: string, category: string) => {
+    if (searchText.trim() === "" && category === "All") {
+      setFilteredProducts(products);
+    } else {
+      const result = await searchProduct(searchText, category);
+      setFilteredProducts(result);
+    }
+  };
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -141,8 +165,9 @@ const AdminDashboard = () => {
                 </button>
               </a>
             </div>
+            <SearchBar categories={categories} onSearch={handleSearch} />
             <CardContainer>
-              {products.map((product) => (
+              {filteredProducts.map((product) => (
                 <TabPanierAdmin
                   key={product.id}
                   product={product}

@@ -1,11 +1,10 @@
 "use client";
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useReducer, useState } from "react";
 import { Product } from "@/Utils/types";
 import { AllProduct, getProductdetails } from "@/Service/Product";
 import NavBar from "@/Components/NavBar/NavBar";
 import Footer from "@/Components/Footer/Footer";
-import Slider from "react-slick";
 
 const Details = ({ params }: { params: { id: number } }) => {
   const [detailsproduct, setdetailsproduct] = useState<Product | null>(null);
@@ -39,39 +38,6 @@ const Details = ({ params }: { params: { id: number } }) => {
         setProducts([]);
       });
   }, [isReloadNeeded]);
-
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1,
-          infinite: true,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  };
 
   return (
     <div className="bg-gray-800  ">
