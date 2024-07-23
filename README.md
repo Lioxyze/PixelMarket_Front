@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# PixelMarket
 
-## Getting Started
+Bienvenue sur **PixelMarket** – votre destination en ligne pour les figurines animées !
 
-First, run the development server:
+![PixelMarket Logo]([url_to_your_logo_image](https://static.vecteezy.com/system/resources/previews/013/743/843/original/red-heart-pixel-art-png.png))
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Table des matières
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- [Introduction](#introduction)
+- [Fonctionnalités](#fonctionnalités)
+- [Technologies Utilisées](#technologies-utilisées)
+- [Installation](#installation)
+- [Utilisation](#utilisation)
+- [Contribuer](#contribuer)
+- [Licence](#licence)
+- [Contact](#contact)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Introduction
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+**PixelMarket** est un site e-commerce où vous pouvez acheter vos figurines animées préférées. Construit avec Next.js, notre site est rapide, moderne et facile à utiliser.
 
-## Learn More
+## Fonctionnalités
 
-To learn more about Next.js, take a look at the following resources:
+- 🔍 **Recherche de produits** : Trouvez facilement les figurines que vous cherchez.
+- 🛒 **Panier d'achat** : Ajoutez des articles à votre panier et passez commande en quelques clics.
+- 📦 **Suivi des commandes** : Suivez l'état de votre commande en temps réel.
+- 🔒 **Sécurité** : Transactions sécurisées et protection des données personnelles.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Technologies Utilisées
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- [Next.js](https://nextjs.org/)
+- [React](https://reactjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Redux](https://redux.js.org/) (ou [Context API](https://reactjs.org/docs/context.html))
+- [Axios](https://axios-http.com/)
+- [Stripe](https://stripe.com/) pour le traitement des paiements
 
-## Deploy on Vercel
+## Installation
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Pour installer et exécuter ce projet en local, suivez ces étapes :
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1. Clonez le dépôt :
+   ```bash
+   git clone https://github.com/Lioxyze/PixelMarket_Front.git
+   cd pixelmarket
